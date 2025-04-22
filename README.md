@@ -1,95 +1,41 @@
-# RealWorld API Backend - Express, TypeScript, Sequelize
+# ![RealWorld Example App](https://raw.githubusercontent.com/gothinkster/realworld/master/media/realworld.png)
 
-## Overview
+> ### Express/TypeScript/Sequelize codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
 
-This project is a RealWorld-compatible backend implementation using:
+[![RealWorld Backend](https://img.shields.io/badge/realworld-backend-%23783578.svg)](http://realworld.io)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue)](https://www.typescriptlang.org/)
+[![Express.js](https://img.shields.io/badge/Express-4.18-green)](https://expressjs.com/)
+[![Sequelize](https://img.shields.io/badge/Sequelize-6.33-orange)](https://sequelize.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)](https://www.mysql.com/)
 
-- TypeScript
-- Express.js
-- Sequelize ORM
-- MySQL Database
+### [Demo](https://demo.realworld.io/)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)
 
-It implements the [RealWorld API Spec](https://github.com/gothinkster/realworld/tree/main/api) to create a Medium.com clone with features like authentication, article creation, commenting, favoriting, and following.
 
-## Features
+This codebase was created to demonstrate a fully fledged fullstack application built with **Express.js, TypeScript, and Sequelize** including CRUD operations, authentication, routing, pagination, and more.
 
-- JWT Authentication
-- RESTful API endpoints
-- User profiles
-- Article CRUD operations
-- Commenting system
-- Article favoriting
-- User following
-- Article tagging
-- Swagger API documentation
+We've gone to great lengths to adhere to the **Express.js** community styleguides & best practices.
 
-## Prerequisites
+For more information on how this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
 
-- Node.js (v14+)
-- MySQL (v5.7+)
-- npm or yarn
 
-## Getting Started
+# How it works
 
-### Installation
+This is a backend implementation of the RealWorld spec using:
 
-1. Clone the repository
+- **TypeScript** for type safety and enhanced developer experience
+- **Express.js** as the web framework for handling HTTP requests
+- **Sequelize ORM** for database operations and model management
+- **MySQL** as the database engine
+- **JWT** for secure authentication
 
-```bash
-git clone https://github.com/yourusername/realworld-app-backend-typescript-express-sequelize.git
-cd realworld-app-backend-typescript-express-sequelize
-```
+The application follows a structured architecture:
 
-2. Install dependencies
+- Models define database entities and relationships
+- Controllers handle request processing and response formatting
+- Middleware provides cross-cutting concerns like authentication and validation
+- Routes define API endpoints and connect them to controllers
 
-```bash
-npm install
-```
-
-3. Set up environment variables
-
-```bash
-cp .env.example .env
-```
-
-Edit the `.env` file with your database credentials and other configurations.
-
-4. Set up the database
-
-```bash
-# Create the database
-mysql -u root -p -e "CREATE DATABASE realworld_app_backend_typescript_express_sequelize;"
-
-# Run migrations
-npm run db:migrate
-```
-
-### Running the Application
-
-#### Development mode
-
-```bash
-npm run dev
-```
-
-The server will start at http://localhost:8000 with auto-reload on file changes.
-
-#### Production mode
-
-```bash
-npm run build
-npm start
-```
-
-### API Documentation
-
-Swagger documentation is available at:
-
-```
-http://localhost:8000/api/docs
-```
-
-## Project Structure
+### Project Structure
 
 ```
 └── src
@@ -101,13 +47,60 @@ http://localhost:8000/api/docs
     └── index.ts            # Application entry point
 ```
 
+# Getting started
+
+## Prerequisites
+
+- Node.js (v14+)
+- MySQL (v5.7+)
+- npm or yarn
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/realworld-app-backend-typescript-express-sequelize.git
+cd realworld-app-backend-typescript-express-sequelize
+
+# Install dependencies
+npm install
+
+# Copy environment variables file
+cp .env.example .env
+
+# Edit the .env file with your database credentials and other configurations
+
+# Create the database
+mysql -u root -p -e "CREATE DATABASE realworld_app_backend_typescript_express_sequelize;"
+
+# Run migrations
+npm run db:migrate
+```
+
+## Running the application
+
+```bash
+# Development mode with hot-reload
+npm run dev
+
+# Production mode
+npm run build
+npm start
+```
+
+The server will start at http://localhost:8000.
+
+## API Documentation
+
+Swagger documentation is available at: http://localhost:8000/api/docs
+
 ## Testing
 
 ```bash
 npm run test
 ```
 
-## API Endpoints
+# API Endpoints
 
 ### Authentication
 - `POST /api/users/register` - Register a new user
@@ -138,6 +131,6 @@ npm run test
 ### Tags
 - `GET /api/tags` - Get tags
 
-## License
+# License
 
 MIT
